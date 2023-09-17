@@ -10,10 +10,22 @@ public class AppTeste {
 	
 	public void enviarEmail() throws Exception {
 		
-		ObjEnvioEmail enviaEmail = new ObjEnvioEmail("wellington.o.reis@gmail.com, wor_m.service@hotmail.com, wor.testeemail@gmail.com", 
-													 "Equipe Wor Micro Service", 
-													 "Testando e-mail com Java", 
-													 "Parabéns! Você recebeu um e-mail enviado pelo JavaMail");
+		ObjEnvioEmail enviaEmail = new ObjEnvioEmail(
+		
+				//lista de email(s)		
+		
+		"wor.testeemail@gmail.com",//Remetente 
+		
+		//--------------------------------------
+		
+				//Emitente
+		"Equipe Wor Micro Service", 
+		
+				//Assunto
+		"Testando e-mail com Java", 
+		
+				//texto
+		"Parabéns! Você recebeu um e-mail enviado pelo JavaMail");
 		
 	enviaEmail.enviarEmail();
 		
