@@ -29,7 +29,7 @@ public class ObjEnvioEmail {
 		this.TextoEmail = TextoEmail;
 	}
 
-	public void enviarEmail() throws Exception {
+	public void enviarEmail(boolean emailHtml) throws Exception {
 
 		Properties properties = new Properties();
 
@@ -55,7 +55,20 @@ public class ObjEnvioEmail {
 		message.setFrom(new InternetAddress(userName, Remetente));
 		message.setRecipients(Message.RecipientType.TO, toUser);
 		message.setSubject(Assunto);
-		message.setText(TextoEmail);
+		
+		if (emailHtml) {
+			
+			message.setContent(TextoEmail, "text/html; charset = utf-8");
+			
+		} else {
+			
+			message.setText(TextoEmail);
+
+		}
+		
+		
+		
+		
 
 		Transport.send(message);
 
